@@ -1,0 +1,5 @@
+<%= link_to "upload", upload_bills_path %>
+
+<% @bills.each do |bill| %>
+  <%= link_to bill.id , bill_path(bill) %>
+<% end %>

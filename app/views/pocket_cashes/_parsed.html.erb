@@ -1,0 +1,54 @@
+<%= $!.to_s %>
+<div class="panel panel-default">  
+  <div class="panel-heading text-right"> 
+    <%= link_to "確認存檔" , save_pocket_cashes_path , :method => :post , :class => "btn btn-primary" if $!.blank? %>
+  </div>
+  <% $pocket_cashes.each do |cash| %>
+    <div class="panel-body">
+
+      <table class="table table-bordered light">
+        <thead>
+          <tr>
+            <th> 日    期 </th>
+            <th> 科目名稱 </th>
+            <th> 摘    要 </th>
+            <th> 收 支 別 </th>
+            <th> 金    額 </th>
+            <th> 傳票號碼 </th>
+            <th> 備    註 </th>
+            <th> 專案代號 </th>
+          </tr>
+        </thead>
+        <tbody>
+          <% cash.pocket_items.each do |item| %>
+            <tr>
+              <td> <%= item.item_date %> </td>
+              <td> <%= item.subject %> </td>
+              <td> <%= item.description %> </td>
+              <td> <%= item.item_type %> </td>
+              <td class="text-right"> <%= render_price item.price %> </td>
+              <td> <%= item.summons_number %> </td>
+              <td> <%= item.note %> </td>
+              <td> <%= item.project_code %> </td>
+            </tr>
+          <% end %>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td> 合計 </td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="text-right"> <%= render_price cash.total_price %> </td>           
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tfoot>
+      </table> 
+          
+    </div>
+  <% end %>
+
+</div>

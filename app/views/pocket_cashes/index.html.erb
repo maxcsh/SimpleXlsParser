@@ -1,0 +1,6 @@
+<%= link_to "零用金上傳", upload_pocket_cashes_path %>
+<%= link_to "貨單上傳", upload_bills_path %>
+
+<% @pocket_cashes.each do |cash| %>
+  <%= link_to cash.id , pocket_cash_path(cash) %>
+<% end %>

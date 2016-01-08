@@ -1,0 +1,15 @@
+
+<h2> 上傳貨單 Excel(xls) 檔案 </h2>
+<%= form_tag upload_bills_path , method: :post ,multipart: true , remote: true , authenticity_token: true do  %> 
+  <div class="col-md-4">
+    <div class="row">
+      <%= file_field_tag "files[]" , :style => "background-color:#ccc; padding:0px; margin-bottom:10px;" , :required => true , :multiple => true %>
+      <%= submit_tag "預覽" , :class => "btn btn-success btn-sm" , data: { :disable_with => "解析中" } %>  
+    </div>
+  </div>
+  <div class="clearfix"></div>
+<% end %>
+<hr>
+
+<div id="preview-parse-file">
+</div>
