@@ -1,5 +1,7 @@
-<%= link_to "upload", upload_bills_path %>
+<h2>貨單一覽</h2>
+<%= link_to "上傳貨單" , upload_bills_path  , :class => "btn btn-primary" %>
+<hr>
 
 <% @bills.each do |bill| %>
-  <%= link_to bill.id , bill_path(bill) %>
+<%= link_to bill.company_number , bill_path(bill) , :class => "btn btn-default" %>  
 <% end %>

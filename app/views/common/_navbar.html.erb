@@ -1,0 +1,29 @@
+    <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0;">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <%= link_to "SimpleXlsParser" ,  root_path , :class=> "navbar-brand" %>
+        </div>
+        <!-- /.navbar-header -->       
+       
+        <div class="navbar-default sidebar" role="navigation">
+            <div class="sidebar-nav navbar-collapse">
+                <ul class="nav" id="side-menu">
+                    <li class="sidebar-search">
+                        <h4>
+                            <%= "使用者 : Test"  %>
+                        </h4>
+                        <!-- /input-group -->
+                    </li>
+                    <li><%= link_to "<i class='fa fa-cloud-upload fa-fw'></i>零用金一覽".html_safe , pocket_cashes_path %></li> 
+                    <li><%= link_to "<i class='fa fa-cloud-upload fa-fw'></i>貨單一覽".html_safe , bills_path %></li> 
+                </ul>
+            </div>
+            <!-- /.sidebar-collapse -->
+        </div>
+        <!-- /.navbar-static-side -->
+    </nav>

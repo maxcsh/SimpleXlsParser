@@ -1,11 +1,10 @@
 <%= $!.to_s %>
+ <% $bills.each do |bill| %>
 <div class="panel panel-default">  
   <div class="panel-heading text-right"> 
     <%= link_to "確認存檔" , save_bills_path , :method => :post , :class => "btn btn-primary" if $!.blank? %>
-  </div>
-  <% $bills.each do |bill| %>
+  </div> 
   <div class="panel-body">
-
     <table class="table table-bordered light">
       <thead>
         <tr>
@@ -36,15 +35,21 @@
           </tr>
           <% end %>
         <% end %>
-      </tbody>
-      <tfoot>
-        <tr><td>合計金額:  <%= render_price bill.total_price %> 折讓金額:       預 付 款: <%= render_price bill.pre_paid %> </td></tr>
-        <tr><td> 營 業 稅:  <%= render_price bill.tax %>  已付金額:   前期應付:</td></tr>
-        <tr><td> 總計金額:<%= render_price bill.tax_price %>   應付金額:<%= render_price bill.tax_price %> 總應付款: <%= render_price bill.to_be_paid %> </td></tr>
-      </tfoot>
-    </table> 
-
+      </tbody>      
+    </table>
   </div>
-  <% end %>
-
+  <div class="panel-footer">
+    <div class="col-md-4">合計金額:  <%= render_price bill.total_price %></div>
+    <div class="col-md-4">折讓金額:</div>
+    <div class="col-md-4">預 付 款: <%= render_price bill.pre_paid %></div>
+    <div class="col-md-4">營 業 稅:  <%= render_price bill.tax %></div>
+    <div class="col-md-4">已付金額:</div>
+    <div class="col-md-4">前期應付:</div>
+    <div class="col-md-4">總計金額:<%= render_price bill.tax_price %></div>
+    <div class="col-md-4">應付金額:<%= render_price bill.tax_price %></div>
+    <div class="col-md-4">總應付款: <%= render_price bill.to_be_paid %> </div>
+    <div class="clearfix"></div>
+  </div>
 </div>
+
+ <% end %>
