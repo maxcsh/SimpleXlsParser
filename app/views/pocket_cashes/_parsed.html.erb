@@ -23,13 +23,13 @@
           <% cash.pocket_items.each do |item| %>
             <tr>
               <td> <%= item.item_date %> </td>
-              <td> <%= item.subject %> </td>
-              <td> <%= item.description %> </td>
+              <td> <%= item.subject.html_safe %> </td>
+              <td> <%= item.description.html_safe %> </td>
               <td> <%= item.item_type %> </td>
               <td class="text-right"> <%= render_price item.price %> </td>
-              <td> <%= item.summons_number %> </td>
-              <td> <%= item.note %> </td>
-              <td> <%= item.project_code %> </td>
+              <td> <%= item.summons_number.html_safe %> </td>
+              <td> <%= item.note.html_safe %> </td>
+              <td> <%= item.project_code.html_safe %> </td>
             </tr>
           <% end %>
         </tbody>

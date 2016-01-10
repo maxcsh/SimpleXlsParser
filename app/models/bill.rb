@@ -46,7 +46,9 @@ class Bill < ActiveRecord::Base
       list.validate!
       index += 1
     end
-
+    self.allowance = sheet.rows[index + 1][0].split("折讓金額:")[1].split("預 付 款:")[0].try( :to_f )
+    self.has_paid = sheet.rows[index + 2][0].split("已付金額:")[1].split("前期應付:")[0].try( :to_f )
+    self.past_payable = sheet.rows[index + 2][0].split("前期應付:")[1].try( :to_f )
     self.pre_paid = sheet.rows[index + 5][0].split("預 付 款:")[1].split("前期餘額:")[0].try( :to_f )
     
     self.validate!
@@ -63,7 +65,14 @@ class Bill < ActiveRecord::Base
     end
 
     self.tax = self.tax_price - self.total_price if self.tax_price && self.total_price
-    self.to_be_paid = self.tax_price
+    
+    self.should_be_paid = self.tax_price
+    self.should_be_paid -= self.allowance if self.allowance
+    self.should_be_paid -= self.has_paid if self.has_paid
+
+    self.to_be_paid = self.should_be_paid
     self.to_be_paid -= self.pre_paid if self.pre_paid
+    self.to_be_paid += self.past_payable if self.past_payable
+
   end
 end

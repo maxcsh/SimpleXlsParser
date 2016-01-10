@@ -53,7 +53,7 @@
         <td class="text-right"><%= render_price @bill.total_price %></td>
         <td></td>
         <td>折讓金額:</td>
-        <td class="text-right"></td>
+        <td class="text-right"><%= render_price @bill.allowance %></td>
         <td></td>
         <td>預 付 款:</td>
         <td class="text-right"><%= render_price @bill.pre_paid %></td>
@@ -63,17 +63,17 @@
         <td class="text-right"><%= render_price @bill.tax %></td>
         <td></td>
         <td>已付金額:</td>
-        <td class="text-right"></td>
+        <td class="text-right"><%= render_price @bill.has_paid %></td>
         <td></td>
         <td>前期應付:</td>
-        <td class="text-right"></td>
+        <td class="text-right"><%= render_price @bill.past_payable %></td>
       </tr>
       <tr>
         <td>總計金額:</td>
         <td class="text-right"><%= render_price @bill.tax_price %></td>
         <td></td>
         <td>應付金額:</td>
-        <td class="text-right"><%= render_price @bill.tax_price %></td>
+        <td class="text-right"><%= render_price @bill.should_be_paid %></td>
         <td></td>
         <td>總應付款:</td>
         <td class="text-right"><%= render_price @bill.to_be_paid %></td>

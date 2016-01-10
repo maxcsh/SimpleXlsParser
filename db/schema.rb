@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160108124729) do
+ActiveRecord::Schema.define(version: 20160110120007) do
 
   create_table "bills", force: :cascade do |t|
     t.string   "company_number"
@@ -26,6 +26,10 @@ ActiveRecord::Schema.define(version: 20160108124729) do
     t.float    "tax_price"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.float    "past_payable"
+    t.float    "has_paid"
+    t.float    "should_be_paid"
+    t.float    "allowance"
   end
 
   create_table "pocket_cashes", force: :cascade do |t|

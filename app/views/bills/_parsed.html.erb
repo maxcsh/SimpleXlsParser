@@ -39,14 +39,14 @@
     </table>
   </div>
   <div class="panel-footer">
-    <div class="col-md-4">合計金額:  <%= render_price bill.total_price %></div>
-    <div class="col-md-4">折讓金額:</div>
-    <div class="col-md-4">預 付 款: <%= render_price bill.pre_paid %></div>
-    <div class="col-md-4">營 業 稅:  <%= render_price bill.tax %></div>
-    <div class="col-md-4">已付金額:</div>
-    <div class="col-md-4">前期應付:</div>
-    <div class="col-md-4">總計金額:<%= render_price bill.tax_price %></div>
-    <div class="col-md-4">應付金額:<%= render_price bill.tax_price %></div>
+    <div class="col-md-4">合計金額: <%= render_price bill.total_price %> </div>
+    <div class="col-md-4">折讓金額: <%= render_price bill.allowance %> </div>
+    <div class="col-md-4">預 付 款: <%= render_price bill.pre_paid %> </div>
+    <div class="col-md-4">營 業 稅: <%= render_price bill.tax %> </div>
+    <div class="col-md-4">已付金額: <%= render_price bill.has_paid %> </div>
+    <div class="col-md-4">前期應付: <%= render_price bill.past_payable %> </div>
+    <div class="col-md-4">總計金額: <%= render_price bill.tax_price %></div>
+    <div class="col-md-4">應付金額: <%= render_price bill.should_be_paid %></div>
     <div class="col-md-4">總應付款: <%= render_price bill.to_be_paid %> </div>
     <div class="clearfix"></div>
   </div>
