@@ -3,6 +3,14 @@
     <h3>貨單</h3> 
   </div>
   <div class="panel-body">
+    <div class="bill-info" style="font-size:16px; margin-bottom:20px;">
+      <div class="col-md-6">廠商編號：<%= @bill.company_number %></div>
+      <div class="col-md-6">公司電話：<%= @bill.company_phone %></div>
+      <div class="clearfix"></div>
+      <div class="col-md-6">統一編號：<%= @bill.vat_number %></div>
+      <div class="col-md-6">公司地址：<%= @bill.company_address %></div>
+      <div class="clearfix"></div>      
+    </div>    
     <table class="table table-bordered light">
   <thead>
     <tr>
@@ -24,11 +32,11 @@
             <td> <%= list.list_number if item == list.shipping_items.first %> </td>
             <td> <%= item.item_name.html_safe %> </td>
             <td> <%= item.spec.html_safe %> </td>
-            <td> <%= item.amount %> </td>
+            <td class="text-right"> <%= item.amount %> </td>
             <td> <%= item.unit.html_safe %> </td>
-            <td> <%= item.unit_price %> </td>
-            <td> <%= item.sum_price %> </td>
-            <td> <%= list.tax_price if item == list.shipping_items.last %> </td>
+            <td class="text-right"> <%= item.unit_price %> </td>
+            <td class="text-right"> <%= item.sum_price %> </td>
+            <td class="text-right"> <%= list.tax_price if item == list.shipping_items.last %> </td>
             <td> <%= list.note if item == list.shipping_items.first %> </td>
           </tr>
           <% end %>
@@ -38,15 +46,49 @@
 
   </div>
   <div class="panel-footer">
-    <div class="col-md-4">合計金額:  <%= render_price @bill.total_price %></div>
-    <div class="col-md-4">折讓金額:</div>
-    <div class="col-md-4">預 付 款: <%= render_price @bill.pre_paid %></div>
-    <div class="col-md-4">營 業 稅:  <%= render_price @bill.tax %></div>
-    <div class="col-md-4">已付金額:</div>
-    <div class="col-md-4">前期應付:</div>
-    <div class="col-md-4">總計金額:<%= render_price @bill.tax_price %></div>
-    <div class="col-md-4">應付金額:<%= render_price @bill.tax_price %></div>
-    <div class="col-md-4">總應付款: <%= render_price @bill.to_be_paid %> </div>
-    <div class="clearfix"></div>
+    <table class="table table-bordered light payment">
+      <tbody>
+      <tr>
+        <td>合計金額:</td>
+        <td class="text-right"><%= render_price @bill.total_price %></td>
+        <td></td>
+        <td>折讓金額:</td>
+        <td class="text-right"></td>
+        <td></td>
+        <td>預 付 款:</td>
+        <td class="text-right"><%= render_price @bill.pre_paid %></td>
+      </tr>
+      <tr>
+        <td>營 業 稅:</td>
+        <td class="text-right"><%= render_price @bill.tax %></td>
+        <td></td>
+        <td>已付金額:</td>
+        <td class="text-right"></td>
+        <td></td>
+        <td>前期應付:</td>
+        <td class="text-right"></td>
+      </tr>
+      <tr>
+        <td>總計金額:</td>
+        <td class="text-right"><%= render_price @bill.tax_price %></td>
+        <td></td>
+        <td>應付金額:</td>
+        <td class="text-right"><%= render_price @bill.tax_price %></td>
+        <td></td>
+        <td>總應付款:</td>
+        <td class="text-right"><%= render_price @bill.to_be_paid %></td>
+      </tr>
+    </table>   
   </div>
 </div>
+
+<style type="text/css">
+  .payment td {
+    width:12.5%;
+  }
+  .payment td , .payment tr {
+    border:1px solid #333 !important;
+  }
+</style>
+
+

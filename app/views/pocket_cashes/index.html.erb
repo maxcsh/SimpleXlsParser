@@ -1,6 +1,7 @@
-<h2>零用金一覽</h2>
-<%= link_to "上傳零用金單" , upload_pocket_cashes_path  , :class => "btn btn-primary" %>
+<h2>零用金明細</h2>
+<%= link_to "上傳零用金明細表" , upload_pocket_cashes_path  , :class => "btn btn-primary" %>
 <hr>
+<h3>已上傳零用金明細</h3>
 <% @pocket_cashes.each do |cash| %>
   <%= link_to cash.created_at.strftime( "%Y-%m-%d" ) , pocket_cash_path(cash) , :class => "btn btn-default" %>
 <% end %>

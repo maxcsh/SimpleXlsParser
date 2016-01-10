@@ -1,7 +1,7 @@
-<h2>貨單一覽</h2>
-<%= link_to "上傳貨單" , upload_bills_path  , :class => "btn btn-primary" %>
+<h2>應付帳款對帳單明細</h2>
+<%= link_to "上傳應付帳款對帳單明細表" , upload_bills_path  , :class => "btn btn-primary" %>
 <hr>
-
+<h3>已上傳應付帳款對帳單明細</h3>
 <% @bills.each do |bill| %>
 <%= link_to bill.company_number , bill_path(bill) , :class => "btn btn-default" %>  
 <% end %>
