@@ -19,7 +19,7 @@
   <tbody>
     <% @pocket_cash.pocket_items.each do |item| %>
       <tr>
-        <td> <%= item.item_date.html_safe %> </td>
+        <td> <%= item.item_date %> </td>
         <td> <%= item.subject.html_safe %> </td>
         <td> <%= item.description.html_safe %> </td>
         <td> <%= item.item_type.html_safe %> </td>
