@@ -21,6 +21,9 @@ class PocketCashesController < ApplicationController
   end
 
   def destroy
+    @pocket_cash = PocketCash.find( params[:id] )
+    @pocket_cash.destroy
+    redirect_to pocket_cashes_path
   end
 
   def upload

@@ -2,6 +2,25 @@
 <%= link_to "上傳應付帳款對帳單明細表" , upload_bills_path  , :class => "btn btn-primary" %>
 <hr>
 <h3>已上傳應付帳款對帳單明細</h3>
-<% @bills.each do |bill| %>
-<%= link_to bill.company_number , bill_path(bill) , :class => "btn btn-default" %>  
-<% end %>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th> 廠商編號 </th>
+      <th> 上傳時間 </th> 
+      <th> 功能 </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @bills.each do |bill| %>
+      <tr>
+        <td> <%= link_to bill.company_number , bill_path( bill ) %> </td>
+        <td>
+          <%= bill.created_at.strftime( "%Y-%m-%d" ) %>
+        </td>
+        <td>
+          <%= link_to "刪除", bill_path( bill ) , :method => :delete , :data => { :confirm => "確定要刪除嗎？" } %>
+      </tr>
+    <% end %>    
+  </tbody>
+</table>

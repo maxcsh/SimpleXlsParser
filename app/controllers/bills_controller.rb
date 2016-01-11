@@ -21,6 +21,9 @@ class BillsController < ApplicationController
   end
 
   def destroy
+    @bill = Bill.find( params[:id] )
+    @bill.destroy
+    redirect_to bills_path
   end
 
   def upload
