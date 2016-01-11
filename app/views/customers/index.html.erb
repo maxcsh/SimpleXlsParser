@@ -8,8 +8,10 @@
   <thead>
     <tr>
       <th class="col-md-1" data-sortable="true"> 編號 </th> 
-      <th class="col-md-2"> 名稱 </th>
-      <th class="col-md-2"> 分公司 </th>      
+      <th class="col-md-1"> 公司名稱 </th>
+      <th class="col-md-1"> 聯絡人1 </th>
+      <th class="col-md-1"> 公司電話1 </th>
+      <th class="col-md-1"> 公司地址 </th>
       <th class="th-tool"> 功能 </th>
     </tr>
   </thead>
@@ -17,8 +19,10 @@
     <% @customers.each do |c| %>
       <tr>
         <td> <%= c.number %> </td>
-        <td> <%= c.company_name %>  </td>        
-        <td> <%= c.branch_company %> </td>        
+        <td> <%= c.company_name %> </td>
+        <td> <%= c.contact_1 %> </td>
+        <td> <%= c.company_phone1 %></td>
+        <td> <%= c.address %> </td>
         <td class="td-tool"> 
           <%= link_to "客戶資訊" , customer_path( c ) , :class => "btn btn-primary btn-xs" %>
           <%= render_edit_btn( "修改" , edit_customer_path( c ) ) %>
