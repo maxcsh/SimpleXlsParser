@@ -45,6 +45,6 @@ class CustomersController < ApplicationController
   end
 
   def customer_params
-    params.require( :customer ).permit( :number , :company_name , :agent , :contact_1 , :contact_phone_1 , :contact_mobile_1 , :contact_email_1 , :contact_2 , :contact_phone_2 , :contact_mobile_2 , :contact_email_2 , :contact_3 , :contact_phone_3 , :contact_mobile_3 , :contact_email_3 , :address , :vat_number , :fax , :signed_date , :branch_company , :company_title , :note )
+    params.require( :customer ).permit( :number , :company_name , :agent , :contact_1 , :contact_phone_1 , :contact_mobile_1 , :contact_email_1 , :contact_2 , :contact_phone_2 , :contact_mobile_2 , :contact_email_2 , :contact_3 , :contact_phone_3 , :contact_mobile_3 , :contact_email_3 , :address , :vat_number , :fax , :signed_date , :branch_company , :company_title , :note , :company_phone1 , :company_phone2 , :company_phone3 )
   end
 end
