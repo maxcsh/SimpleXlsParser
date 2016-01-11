@@ -1,0 +1,83 @@
+
+<h2 class="page-header"> <%= @customer.company_name %> 客戶資訊</h2>
+
+<div class="tool-bar">
+	<%= render_edit_btn( "修改" , edit_customer_path( @customer ) ) %>
+  <%= link_to "刪除", customer_path( @customer ) , :method => :delete , :data => { :confirm => "確定要刪除嗎？" } %>
+</div>
+
+<table class="table table-bordered">
+	<tbody>
+		<tr>
+			<td class="col-sm-3 small-lattice gray">編號</td>
+			<td class="col-sm-3 light"><%= @customer.number %> </td>
+			<td class="col-sm-3 small-lattice gray">公司名稱</td>
+			<td class="col-sm-3 light"><%= @customer.company_name %> </td>
+		</tr>
+
+		<tr>
+			<td class="col-sm-3 small-lattice gray">代表人</td>
+			<td class="col-sm-3 light"><%= @customer.agent %> </td>
+			<td class="col-sm-3 small-lattice gray">公司抬頭&統編</td>
+			<td class="col-sm-3 light"><%= @customer.company_title %> <%= @customer.vat_number %> </td>
+		</tr>
+
+		<tr>
+			<td class="col-sm-3 small-lattice gray">傳真</td>
+			<td class="col-sm-3 light"><%= @customer.fax %> </td>
+			<td class="col-sm-3 small-lattice gray">分公司</td>
+			<td class="col-sm-3 light"><%= @customer.branch_company %> </td>
+		</tr>
+
+		<tr>
+			<td class="col-sm-3 small-lattice gray">公司地址</td>
+			<td class="col-sm-3 light"><%= @customer.address %> </td>
+		</tr>
+
+		<tr>
+			<td class="col-sm-3 small-lattice gray">聯絡人 1</td>
+			<td class="col-sm-3 light"><%= @customer.contact_1%> </td>
+			<td class="col-sm-3 small-lattice gray">聯絡人電話 1</td>
+			<td class="col-sm-3 light"><%= @customer.contact_phone_1 %> </td>
+		</tr>
+
+		<tr>
+			<td class="col-sm-3 small-lattice gray">聯絡人手機 1</td>
+			<td class="col-sm-3 light"><%= @customer.contact_mobile_1 %> </td>
+			<td class="col-sm-3 small-lattice gray">聯絡人email 1</td>
+			<td class="col-sm-3 light"><%= @customer.contact_email_1 %> </td>
+		</tr>
+
+		<tr>
+			<td class="col-sm-3 small-lattice gray">聯絡人 2</td>
+			<td class="col-sm-3 light"><%= @customer.contact_2 %> </td>
+			<td class="col-sm-3 small-lattice gray">聯絡人電話 2</td>
+			<td class="col-sm-3 light"><%= @customer.contact_phone_2 %> </td>
+		</tr>
+
+		<tr>
+			<td class="col-sm-3 small-lattice gray">聯絡人手機 2</td>
+			<td class="col-sm-3 light"><%= @customer.contact_mobile_2 %> </td>
+			<td class="col-sm-3 small-lattice gray">聯絡人email 2</td>
+			<td class="col-sm-3 light"><%= @customer.contact_email_2 %> </td>
+		</tr>
+
+		<tr>
+			<td class="col-sm-3 small-lattice gray">聯絡人 3</td>
+			<td class="col-sm-3 light"><%= @customer.contact_3 %> </td>
+			<td class="col-sm-3 small-lattice gray">聯絡人電話 3</td>
+			<td class="col-sm-3 light"><%= @customer.contact_phone_3 %> </td>
+		</tr>
+
+		<tr>
+			<td class="col-sm-3 small-lattice gray">聯絡人手機 3</td>
+			<td class="col-sm-3 light"><%= @customer.contact_mobile_3 %> </td>
+			<td class="col-sm-3 small-lattice gray">聯絡人email 3</td>
+			<td class="col-sm-3 light"><%= @customer.contact_email_3 %> </td>
+		</tr>
+		<tr>
+			<td class="col-sm-3 small-lattice gray">備註</td>
+			<td class="col-sm-3 light"><%= @customer.note %></td>
+		</tr>
+	</tbody>
+</table>

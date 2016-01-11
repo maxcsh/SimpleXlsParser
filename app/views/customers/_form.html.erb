@@ -1,0 +1,26 @@
+<%= simple_form_for @customer do |f| %>
+  <%= f.input :number , :label => "編號" %>
+  <%= f.input :company_name , :label => "公司名稱" %>
+  <%= f.input :agent , :label => "代表人" %>
+  <%= f.input :contact_1 , :label => "聯絡人 1" %>
+  <%= f.input :contact_phone_1 , :label => "聯絡人電話 1" %>
+  <%= f.input :contact_mobile_1 , :label => "聯絡人手機 1" %>
+  <%= f.input :contact_email_1 , :label => "聯絡人email 1" %>
+  <%= f.input :contact_2 , :label => "聯絡人 2" %>
+  <%= f.input :contact_phone_2 , :label => "聯絡人電話 2" %>
+  <%= f.input :contact_mobile_2 , :label => "聯絡人手機 2" %>
+  <%= f.input :contact_email_2 , :label => "聯絡人email 2" %>
+  <%= f.input :contact_3 , :label => "聯絡人 3" %>
+  <%= f.input :contact_phone_3 , :label => "聯絡人電話 3" %>
+  <%= f.input :contact_mobile_3 , :label => "聯絡人手機 3" %>
+  <%= f.input :contact_email_3 , :label => "聯絡人email 3" %>
+  <%= f.input :address , :label => "公司地址" %>
+  <%= f.input :company_title , :label => "公司抬頭" %>
+  <%= f.input :vat_number , :label => "公司統編" %>
+  <%= f.input :fax , :label => "傳真" %>
+  <%#= f.input :signed_date , :label => "簽約日期" , wrapper_html: { class: 'form-inline' } %>
+  <%= f.input :branch_company , :label => "分公司" %>
+  <%= f.input :note , :label => "備註" %>
+  <%= f.submit "確定" , :class => "btn btn-primary" %>
+  <%= render_back_btn %>
+<% end %>

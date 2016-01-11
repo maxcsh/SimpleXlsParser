@@ -16,6 +16,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :customers
+
   root "pocket_cashes#index"
 
 end

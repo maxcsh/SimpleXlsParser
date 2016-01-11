@@ -1,0 +1,42 @@
+<h2 class="page-header"> 客戶管理 </h2>
+
+<div class="tool-bar">
+  <%= link_to "新增客戶" , new_customer_path , :class => "btn btn-primary" %>
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th class="col-md-1" data-sortable="true"> 編號 </th> 
+      <th class="col-md-2"> 名稱 </th>
+      <th class="col-md-2"> 分公司 </th>      
+      <th class="th-tool"> 功能 </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @customers.each do |c| %>
+      <tr>
+        <td> <%= c.number %> </td>
+        <td> <%= c.company_name %>  </td>        
+        <td> <%= c.branch_company %> </td>        
+        <td class="td-tool"> 
+          <%= link_to "客戶資訊" , customer_path( c ) , :class => "btn btn-primary btn-xs" %>
+          <%= render_edit_btn( "修改" , edit_customer_path( c ) ) %>
+          <%= link_to "刪除", customer_path( c ) , :method => :delete , :data => { :confirm => "確定要刪除嗎？" } %>
+        </td>      
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<style type="text/css">
+  .th-tool{
+    width:60px;
+    text-align: center;    
+  }
+
+  .td-tool , .td-tool a{
+    width:60px;
+    text-align: center;     
+  }
+</style>
