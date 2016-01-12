@@ -1,0 +1,49 @@
+<%= $!.to_s %>
+<div class="panel panel-default">  
+  <div class="panel-heading text-right"> 
+    <%= link_to "確認存檔" , save_business_cards_path , :method => :post , :class => "btn btn-primary" , data: { disable_with: "存檔中" } if $!.blank? %>
+  </div>
+    <div class="panel-body">
+      <table class="table table-bordered light">
+        <thead>
+          <tr>
+            <th></th>
+            <th></th>
+            <th>公司名稱</th>
+            <th>姓名</th>
+            <th>職稱</th>
+            <th>電話</th>
+            <th>傳真</th>
+            <th>手機</th>
+            <th>地址</th>
+            <th>電子信箱</th>
+            <th>統編</th>
+            <th>收到備註</th>
+            <th>建檔</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% $cards.each do |card| %>
+            <tr>
+              <td> <%= card.category_number %> </td>
+              <td> <%= card.category %> </td>
+              <td> <%= card.company_name %> </td>
+              <td> <%= card.name %> </td>
+              <td> <%= card.title %> </td>
+              <td> <%= card.phone %> </td>
+              <td> <%= card.tax_phone %> </td>
+              <td> <%= card.mobile_phone %> </td>
+              <td> <%= card.address %> </td>
+              <td> <%= card.email %> </td>
+              <td> <%= card.vat_number %> </td>
+              <td> <%= card.note %> </td>
+              <td> <%= card.old_created_at %> </td>
+            </tr>
+          <% end %>
+        </tbody>
+        
+      </table> 
+          
+    </div>
+  
+</div>

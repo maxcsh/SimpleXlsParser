@@ -1,0 +1,44 @@
+<h2>客戶資料表</h2>
+<%= link_to "上傳客戶資料表" , upload_business_cards_path  , :class => "btn btn-primary" %>
+<hr>
+<h3>已上傳客戶資料</h3>
+
+
+ <table class="table fixed-width" data-toggle="table" data-search="true" data-show-columns="true" data-show-toggle="true" data-pagination="true" data-page-size="50" data-page-list="[20, 50, 100, 300]" data-use-row-attr-func="true" data-reorderable="true" data-maintain-selected="true">
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th>公司名稱</th>
+      <th>姓名</th>
+      <th>職稱</th>
+      <th>電話</th>
+      <th>傳真</th>
+      <th>手機</th>
+      <th>地址</th>
+      <th>電子信箱</th>
+      <th>統編</th>
+      <th>收到備註</th>
+      <th>建檔</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @cards.each do |card| %>
+      <tr>
+        <td> <%= card.category_number.try(:html_safe) %> </td>
+        <td> <%= card.category.try(:html_safe) %> </td>
+        <td> <%= card.company_name.try(:html_safe) %> </td>
+        <td> <%= card.name.try(:html_safe) %> </td>
+        <td> <%= card.title.try(:html_safe) %> </td>
+        <td> <%= card.phone.try(:html_safe) %> </td>
+        <td> <%= card.tax_phone.try(:html_safe) %> </td>
+        <td> <%= card.mobile_phone.try(:html_safe) %> </td>
+        <td> <%= card.address.try(:html_safe) %> </td>
+        <td> <%= card.email.try(:html_safe) %> </td>
+        <td> <%= card.vat_number.try(:html_safe) %> </td>
+        <td> <%= card.note.try(:html_safe) %> </td>
+        <td> <%= card.old_created_at.try(:html_safe) %> </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
