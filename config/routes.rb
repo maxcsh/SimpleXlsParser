@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  devise_for :users
   resources :pocket_cashes do
     collection do
       get :upload

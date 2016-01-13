@@ -47,7 +47,7 @@ group :development, :test do
   gem 'spring'
 end
 
-# gem 'mysql2', '~> 0.3.18'
+gem 'mysql2', '~> 0.3.18'
 gem 'devise'
 gem 'devise-i18n'
 
@@ -78,10 +78,12 @@ gem 'font-awesome-rails'
 
 gem 'nested_form'
 
-# gem 'cancan'
-# gem 'rolify'
+gem 'cancancan'
+gem 'rolify'
 
 gem 'spreadsheet'
 
 gem 'ransack'
 gem 'remotipart'
+
+gem 'yaml_db'
