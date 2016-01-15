@@ -1,0 +1,16 @@
+<%= simple_form_for @card do |f| %>
+  <%= f.input :category_number , :label => "分類編號" %>
+  <%= f.input :category , :label => "分類" %>
+  <%= f.input :company_name , :label => "公司名稱" %>
+  <%= f.input :name , :label => "姓名" %>
+  <%= f.input :title , :label => "職稱" %>
+  <%= f.input :phone , :label => "電話" %>
+  <%= f.input :tax_phone , :label => "傳真" %>
+  <%= f.input :mobile_phone , :label => "手機" %>
+  <%= f.input :address , :label => "地址" %>
+  <%= f.input :email , :label => "電子信箱" %>
+  <%= f.input :vat_number , :label => "統編" %>
+  <%= f.input :note , :label => "收到備註" %>
+  <%= f.input :old_created_at , :label => "建檔" %>
+  <%= f.submit "確認" %>
+<% end %>

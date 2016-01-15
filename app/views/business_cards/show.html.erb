@@ -1,6 +1,12 @@
+
 <div class="panel panel-warning" style="margin-top:50px;">
+  <%= link_to "客戶資料總覽", business_cards_path , :class => "btn btn-info" %>
+  <%= link_to "上傳客戶資料表" , upload_business_cards_path , :class => "btn btn-primary" %>
+  <%= link_to "新增客戶資料" , new_business_card_path  , :class => "btn btn-success" %>
   <div class="panel-heading">
-    <h3>客戶資料表</h3>
+    <h3>客戶資料</h3>
+    <%= link_to "修改" , edit_business_card_path( @card ) %> 
+    <%= link_to "刪除" , business_card_path( @card ) , :method => :delete , :data => { :confirm => "確定要刪除嗎?" } %>
   </div>
   <div class="panel-body">
     <table class="table table-bordered light">
@@ -22,7 +28,6 @@
           </tr>
         </thead>
         <tbody>
-          
             <tr>
               <td> <%= @card.category_number %> </td>
               <td> <%= @card.category %> </td>
@@ -38,9 +43,7 @@
               <td> <%= @card.note %> </td>
               <td> <%= @card.old_created_at %> </td>
             </tr>
-          
         </tbody>
-        
       </table> 
     
   </div>

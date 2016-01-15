@@ -1,26 +1,39 @@
 class SuppliersController < ApplicationController
+
+  before_action :find_supplier , :only => [ :show , :edit , :update , :destroy ]
+
   def index
     @suppliers = Supplier.all
   end
 
-  def show
-    @supplier = Supplier.find( params[:id] )
+  def show    
   end
 
   def new
+    @supplier = Supplier.new
   end
 
   def create
+    @supplier = Supplier.new( supplier_params )
+    if @supplier.save
+      redirect_to supplier_path( @supplier )
+    else
+      render :new
+    end
   end
 
   def edit
   end
 
   def update
+    if @supplier.update( supplier_params )
+      redirect_to supplier_path( @supplier )
+    else
+      render :edit
+    end
   end
 
   def destroy
-    @supplier = Supplier.find( params[:id] )
     @supplier.destroy
     redirect_to suppliers_path
   end
@@ -47,7 +60,11 @@ class SuppliersController < ApplicationController
 
   private
 
+  def find_supplier
+    @supplier = Supplier.find( params[:id] )
+  end
+
   def supplier_params
-    params.require( :supplier ).permit()
+    params.require( :supplier ).permit( :category_number, :category, :company_number, :company_name, :company_brief_name, :name, :title, :phone, :tax_phone, :mobile_phone, :address, :email, :vat_number, :note, :old_created_at, :contact )
   end
 end

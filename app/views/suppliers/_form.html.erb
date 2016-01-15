@@ -1,0 +1,11 @@
+<%= simple_form_for @supplier do |f| %>
+  <%= f.input :category , :label => "分類" %>
+  <%= f.input :company_number, :label => "廠商編號" %>
+  <%= f.input :company_brief_name, :label => "廠商簡稱" %>
+  <%= f.input :address, :label => "公司地址" %>
+  <%= f.input :phone   , :label => "電話" %>
+  <%= f.input :vat_number, :label => "統一編號" %>
+  <%= f.input :contact, :label => "聯絡人" %>
+  <%= f.input :note, :label => "備註" %>
+  <%= f.submit "確定" %>
+<% end %>

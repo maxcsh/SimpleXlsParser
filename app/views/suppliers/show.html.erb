@@ -1,11 +1,18 @@
+
 <div class="panel panel-warning" style="margin-top:50px;">
+  <%= link_to "供應商資料總覽" , suppliers_path  , :class => "btn btn-info" %>
+  <%= link_to "上傳供應商資料" , upload_suppliers_path  , :class => "btn btn-primary" %>
+  <%= link_to "新增供應商資料" , new_supplier_path , :class => "btn btn-success" %>
   <div class="panel-heading">
-    <h3>客戶資料表</h3>
+    <h3>供應商資料</h3>
+    <%= link_to "修改" , edit_supplier_path( @supplier ) %> 
+    <%= link_to "刪除" , supplier_path( @supplier ) , :method => :delete , :data => { :confirm => "確定要刪除嗎?" } %>
   </div>
   <div class="panel-body">
     <table class="table table-bordered light">
       <thead>
         <tr>
+          <th>分類</th>
           <th>廠商編號</th>
           <th>廠商簡稱</th>
           <th>公司地址</th>
@@ -17,6 +24,7 @@
       </thead>
       <tbody>        
         <tr>
+          <td> <%= @supplier.category %> </td>
           <td> <%= @supplier.company_number %> </td>
           <td> <%= @supplier.company_brief_name %> </td>
           <td> <%= @supplier.address %> </td>
