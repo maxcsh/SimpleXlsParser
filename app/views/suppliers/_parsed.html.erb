@@ -1,0 +1,37 @@
+<%= $!.to_s %>
+<div class="panel panel-default">  
+  <div class="panel-heading text-right"> 
+    <%= link_to "確認存檔" , save_suppliers_path , :method => :post , :class => "btn btn-primary" , data: { disable_with: "存檔中" } if $!.blank? %>
+  </div>
+    <div class="panel-body">
+      <table class="table table-bordered light">
+        <thead>
+          <tr>
+            <th>廠商編號</th>
+            <th>廠商簡稱</th>
+            <th>公司地址</th>
+            <th>電話</th>
+            <th>統一編號</th>
+            <th>聯 絡 人</th>
+            <th>備註</th>            
+          </tr>
+        </thead>
+        <tbody>
+          <% $suppliers.each do |supplier| %>
+            <tr>
+              <td> <%= supplier.company_number %> </td>
+              <td> <%= supplier.company_brief_name %> </td>
+              <td> <%= supplier.address %> </td>
+              <td> <%= supplier.phone %> </td>
+              <td> <%= supplier.vat_number %> </td>
+              <td> <%= supplier.contact %> </td>
+              <td> <%= supplier.note %> </td>
+            </tr>
+          <% end %>
+        </tbody>
+        
+      </table> 
+          
+    </div>
+  
+</div>

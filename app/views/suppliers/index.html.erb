@@ -1,0 +1,32 @@
+<h2>客戶資料表</h2>
+<%= link_to "上傳供應商資料" , upload_suppliers_path  , :class => "btn btn-primary" %>
+<hr>
+<h3>已上傳客戶資料</h3>
+
+
+ <table class="table fixed-width" data-toggle="table" data-search="true" data-show-columns="true" data-show-toggle="true" data-pagination="true" data-page-size="50" data-page-list="[20, 50, 100, 300]" data-use-row-attr-func="true" data-reorderable="true" data-maintain-selected="true">
+    <thead>
+      <tr>
+        <th>廠商編號</th>
+        <th>廠商簡稱</th>
+        <th>公司地址</th>
+        <th>電話</th>
+        <th>統一編號</th>
+        <th>聯 絡 人</th>
+        <th>備註</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @suppliers.each do |supplier| %>
+        <tr>
+          <td> <%= supplier.company_number %> </td>
+          <td> <%= supplier.company_brief_name %> </td>
+          <td> <%= supplier.address %> </td>
+          <td> <%= supplier.phone %> </td>
+          <td> <%= supplier.vat_number %> </td>
+          <td> <%= supplier.contact %> </td>
+          <td> <%= supplier.note %> </td>          
+        </tr>
+      <% end %>
+    </tbody>
+</table>

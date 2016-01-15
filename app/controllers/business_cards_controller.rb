@@ -48,6 +48,6 @@ class BusinessCardsController < ApplicationController
   private
 
   def business_card_params
-    params.require( :business_cards ).permit()
+    params.require( :business_card ).permit()
   end
 end

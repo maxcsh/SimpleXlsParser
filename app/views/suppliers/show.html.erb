@@ -1,0 +1,34 @@
+<div class="panel panel-warning" style="margin-top:50px;">
+  <div class="panel-heading">
+    <h3>客戶資料表</h3>
+  </div>
+  <div class="panel-body">
+    <table class="table table-bordered light">
+      <thead>
+        <tr>
+          <th>廠商編號</th>
+          <th>廠商簡稱</th>
+          <th>公司地址</th>
+          <th>電話</th>
+          <th>統一編號</th>
+          <th>聯 絡 人</th>
+          <th>備註</th>            
+        </tr>
+      </thead>
+      <tbody>        
+        <tr>
+          <td> <%= @supplier.company_number %> </td>
+          <td> <%= @supplier.company_brief_name %> </td>
+          <td> <%= @supplier.address %> </td>
+          <td> <%= @supplier.phone %> </td>
+          <td> <%= @supplier.vat_number %> </td>
+          <td> <%= @supplier.contact %> </td>
+          <td> <%= @supplier.note %> </td>
+          
+        </tr>        
+      </tbody>
+        
+    </table> 
+    
+  </div>
+</div>

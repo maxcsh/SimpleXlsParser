@@ -23,7 +23,8 @@
                       <li><%= link_to "<i class='fa fa-cloud-upload fa-fw'></i>零用金明細".html_safe , pocket_cashes_path %></li> 
                       <li><%= link_to "<i class='fa fa-cloud-upload fa-fw'></i>應付帳款對帳單明細".html_safe , bills_path %></li>
                       <li><%#= link_to "<i class='fa fa-cloud-upload fa-fw'></i>客戶資料填寫".html_safe , customers_path %></li> 
-                      <li><%= link_to "<i class='fa fa-cloud-upload fa-fw'></i>客戶資料填寫".html_safe , business_cards_path %></li>
+                      <li><%= link_to "<i class='fa fa-cloud-upload fa-fw'></i>客戶資料上傳".html_safe , business_cards_path %></li>
+                      <li><%= link_to "<i class='fa fa-cloud-upload fa-fw'></i>供應商資料上傳".html_safe , suppliers_path %></li>
                       <li><%= link_to "<i class='fa fa-cloud-upload fa-fw'></i>登出".html_safe , destroy_user_session_path , :method => :delete %></li>
                     <% else %>
                       <li><%= link_to "<i class='fa fa-cloud-upload fa-fw'></i>登入".html_safe , new_user_session_path %></li>
