@@ -5,5 +5,5 @@
 <div class="clearfix border"></div>
 
 <% @suppliers.each do |supplier| %>
-  <%= render_btn_container( supplier.company_brief_name , supplier_path( supplier ) ) %>
+  <%= render_toolbtn( supplier.company_brief_name , supplier_path( supplier ) ) %>
 <% end %>
