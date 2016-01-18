@@ -1,42 +1,48 @@
-
-<div class="panel panel-warning" style="margin-top:50px;">
-  <%= link_to "供應商資料總覽" , suppliers_path  , :class => "btn btn-info" %>
-  <%= link_to "上傳供應商資料" , upload_suppliers_path  , :class => "btn btn-primary" %>
-  <%= link_to "新增供應商資料" , new_supplier_path , :class => "btn btn-success" %>
+<div class="panel panel-warning">
   <div class="panel-heading">
-    <h3>供應商資料</h3>
-    <%= link_to "修改" , edit_supplier_path( @supplier ) %> 
-    <%= link_to "刪除" , supplier_path( @supplier ) , :method => :delete , :data => { :confirm => "確定要刪除嗎?" } %>
+    <h3>供應商資料 
+      <%= link_to "修改" , edit_supplier_path( @supplier ) , :class=>"btn btn-success" %>
+      <small style="margin-left:20px;">
+        <%= link_to "刪除" , supplier_path( @supplier ) , :method => :delete , :data => { :confirm => "確定要刪除嗎?" } , :class => "text-danger" %>
+      </small>
+    </h3>    
   </div>
   <div class="panel-body">
     <table class="table table-bordered light">
-      <thead>
+      <tbody>
         <tr>
-          <th>分類</th>
-          <th>廠商編號</th>
-          <th>廠商簡稱</th>
-          <th>公司地址</th>
-          <th>電話</th>
-          <th>統一編號</th>
-          <th>聯 絡 人</th>
-          <th>備註</th>            
+          <td>分類</td>
+          <td><%= @supplier.category %></td>
         </tr>
-      </thead>
-      <tbody>        
         <tr>
-          <td> <%= @supplier.category %> </td>
-          <td> <%= @supplier.company_number %> </td>
-          <td> <%= @supplier.company_brief_name %> </td>
-          <td> <%= @supplier.address %> </td>
-          <td> <%= @supplier.phone %> </td>
-          <td> <%= @supplier.vat_number %> </td>
-          <td> <%= @supplier.contact %> </td>
-          <td> <%= @supplier.note %> </td>
-          
-        </tr>        
+          <td>廠商編號</td>
+          <td><%= @supplier.company_number %></td>
+        </tr>
+        <tr>
+          <td>廠商簡稱</td>
+          <td><%= @supplier.company_brief_name %></td>
+        </tr>
+        <tr>
+          <td>公司地址</td>
+          <td><%= @supplier.address %></td>
+        </tr>
+        <tr>
+          <td>電話</td>
+          <td><%= @supplier.phone %></td>
+        </tr>
+        <tr>
+          <td>統一編號</td>
+          <td><%= @supplier.vat_number %></td>
+        </tr>
+        <tr>
+          <td>聯 絡 人</td>
+          <td><%= @supplier.contact %></td>
+        </tr>
+        <tr>
+          <td>備註</td>
+          <td><%= @supplier.note %></td>
+        </tr>
       </tbody>
-        
-    </table> 
-    
+    </table>
   </div>
 </div>

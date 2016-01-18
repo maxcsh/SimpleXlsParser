@@ -14,4 +14,37 @@
     </div>
   </div>
 </body>
+
+<script type="text/javascript">
+  // $(document).ready(function(){
+  //   var width = $(window).width();
+  //   if ( width > 1024 ){      
+  //     $('.navbar-collapse').addClass('in');
+  //     $('.navbar-collapse').addClass('collapse');
+  //     $('body').addClass('menu-slider');
+  //     $('body').addClass('in');
+  //   }
+  // });
+  (function ($) {   
+
+    'use strict';
+
+    // Toggle classes in body for syncing sliding animation with other elements
+    $('#bs-example-navbar-collapse-2')
+        .on('show.bs.collapse', function (e) {
+            $('body').addClass('menu-slider');
+        })
+        .on('shown.bs.collapse', function (e) {
+            $('body').addClass('in');
+        })
+        .on('hide.bs.collapse', function (e) {
+            $('body').removeClass('menu-slider');
+        })
+        .on('hidden.bs.collapse', function (e) {
+            $('body').removeClass('in');
+        });
+
+})(jQuery);
+
+</script>
 </html>

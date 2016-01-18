@@ -21,7 +21,7 @@ body {
 @media(min-width:768px) {
     #page-wrapper {
         position: inherit;
-        margin: 0 0 0 250px;
+       /* margin: 0 0 0 250px;*/
         padding: 0 30px;
         border-left: 1px solid #e7e7e7;
     }   
@@ -364,4 +364,109 @@ table.dataTable thead .sorting:after {
 
 .th-inner a , .th-inner a:hover , .th-inner a:focus{
     color:#222;
+}
+
+/**** animated navbar sidebar *****/
+
+/* Reset responsive Bootstrap elements */
+#navbar2 .navbar-header {
+    float: none;
+}
+
+#navbar2 .navbar-toggle {
+    display: block;
+    float:left;
+    margin:10px 15px 0 15px;
+}
+
+#navbar2 .navbar-nav {
+    float: none !important;
+    margin: 7.5px -15px;
+}
+
+#navbar2 .navbar-nav .open .dropdown-menu {
+    position: static;
+    float: none;
+    background-color: transparent;
+    border: 0;
+    box-shadow: none;
+}
+
+#navbar2 .navbar-form {
+    float: none !important;
+    padding: 0;
+}
+
+#navbar2 .navbar-nav>li {
+    float: none;
+}
+
+/* Reposition elements affected by the sliding menu */
+#wrapper {
+    position: relative;
+    left: 0;
+    transition: left 0.35s ease;
+}
+
+#navbar2 .navbar-collapse {
+    position: fixed;
+    top: 0;
+    width:250px;
+    left: -250px;
+    display: block;    
+    height: 100% !important;
+    /*max-height: 100%;*/
+    margin: 0;
+    background-color: #f8f8f8;
+    transition: left 0.35s ease;
+}
+
+#navbar2 .navbar-collapse.collapsing {
+    transition: left 0.35s ease;
+}
+
+#navbar2 .navbar-collapse.in {
+    left: 0;
+}
+
+body.menu-slider.in {
+    position: relative;
+    overflow: hidden;
+}
+
+body.menu-slider #wrapper {
+    transition: left 0.35s ease;
+}
+
+body.menu-slider.in #wrapper {
+    left: 250px;
+}
+
+#sidebar-list .list-group-item {
+    margin-bottom:10px;
+    background-color:#d2d2d2;
+    font-size:18px;
+}
+
+/****** big btn *******/
+
+.big-btn{
+    text-align:center;    
+    width:500px;
+    height:100px;    
+    background-color: #fff;
+    border-radius: 1px;
+    color:#333;
+    vertical-align: middle;
+    padding:5px;
+    display: table-cell !important;
+    white-space: normal !important;
+    border:2px solid #ccc !important;
+    font-size:24px !important;
+    /*padding:24px 0 0 0 !important;*/    
+}
+
+.border{
+    border-bottom:3px solid #b5b4b3;
+
 }

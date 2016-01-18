@@ -14,5 +14,11 @@ module ApplicationHelper
   def render_edit_btn( title , url )
     link_to title , url , :class => "btn btn-primary btn-xs fa fa-edit"
   end
+
+  def render_btn_container( title , url )
+    content_tag :div , :class => "col-sm-3" , :style => "padding:0px 5px; margin:10px 0;" do
+      link_to title , url , :class => "big-btn" 
+    end
+  end
   
 end

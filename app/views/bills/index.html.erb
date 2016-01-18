@@ -19,7 +19,7 @@
           <%= bill.created_at.strftime( "%Y-%m-%d" ) %>
         </td>
         <td>
-          <%= link_to "刪除", bill_path( bill ) , :method => :delete , :data => { :confirm => "確定要刪除嗎？" } %>
+          <%= link_to "刪除", bill_path( bill ) , :method => :delete , :data => { :confirm => "確定要刪除嗎？" } %></td>
       </tr>
     <% end %>    
   </tbody>
