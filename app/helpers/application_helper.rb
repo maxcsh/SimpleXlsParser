@@ -16,8 +16,16 @@ module ApplicationHelper
   end
 
   def render_btn_container( title , url )
-    content_tag :div , :class => "col-sm-3" , :style => "padding:0px 5px; margin:10px 0;" do
-      link_to title , url , :class => "big-btn" 
+    content_tag :div , :class => "col-sm-3" , :style => "padding:5px; margin-top:10px;" do
+    link_to url , :class => "" , :style => "" do      
+        content_tag :div , title , :class => "big-btn " , :style => ""      
+    end
+    end
+  end
+
+   def render_toolbtn( title , url )
+    content_tag :div , :class => "col-sm-3" , :style => "margin:10px 0; padding:0 5px;" do
+      link_to title , url , :style => "margin:10px 0;" , :class => "tool-btn"
     end
   end
   

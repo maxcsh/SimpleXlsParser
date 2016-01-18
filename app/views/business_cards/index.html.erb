@@ -1,6 +1,6 @@
 <h2>客戶資料表</h2>
-<%= render_btn_container( "上傳客戶資料表" , upload_business_cards_path ) %>
-<%= render_btn_container( "新增客戶資料" , new_business_card_path ) %>
+<%= render_toolbtn( "上傳客戶資料表" , upload_business_cards_path ) %>
+<%= render_toolbtn( "新增客戶資料" , new_business_card_path ) %>
 <div class="clearfix border"></div>
 <% @cards.each do |card| %>
   <%= render_btn_container( card.company_name.try(:html_safe) , business_card_path( card ) ) %>

@@ -450,10 +450,27 @@ body.menu-slider.in #wrapper {
 
 /****** big btn *******/
 
+
 .big-btn{
-    text-align:center;    
+    text-align:center;
+    height:95px;
+    max-height: 95px;  
+    background-color: #fff;
+    border-radius: 1px;
+    color:#333;
+    vertical-align: middle;
+    padding:5px;
+    overflow: hidden;    
+    white-space: normal !important;
+    border:2px solid #ccc !important;
+    font-size:20px !important;
+}
+
+.tool-btn{
+    text-align:center;
     width:500px;
-    height:100px;    
+    height:100px;
+    max-height: 100px;  
     background-color: #fff;
     border-radius: 1px;
     color:#333;
@@ -462,8 +479,7 @@ body.menu-slider.in #wrapper {
     display: table-cell !important;
     white-space: normal !important;
     border:2px solid #ccc !important;
-    font-size:24px !important;
-    /*padding:24px 0 0 0 !important;*/    
+    font-size:20px !important;
 }
 
 .border{
